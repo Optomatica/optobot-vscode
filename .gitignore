@@ -1,0 +1,7 @@
+*.vsix
+.vscode/.browse.VC.db*
+/.vscode-test/
+/node_modules/
+/dist/
+/out/
+/scripts/languageserver/julia_pkgdir/lib/

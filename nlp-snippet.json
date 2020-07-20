@@ -1,0 +1,12 @@
+{
+	"Intent": {
+		"prefix": ["[I"],
+		"body": ["[I:${1:intent_name}]", "$2"],
+		"description": "An intent declaration & samples."
+	},
+	"Entity": {
+		"prefix": ["[E"],
+		"body": ["[E:wit\\$${1}]", "$2"],
+		"description": "An entity samples."
+	}
+}

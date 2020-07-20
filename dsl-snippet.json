@@ -1,0 +1,17 @@
+{
+	"Variable": {
+		"prefix": ["[V"],
+		"body": ["[V:${1:variable_name}:${2:variable_type}:${3:variable_storage_type}] $4"],
+		"description": "A variable declaration."
+	},
+	"Fetched Variable": {
+		"prefix": ["[F"],
+		"body": ["[F:${1:variable_name}:${2:variable_type}:${3:variable_storage_type}] $4"],
+		"description": "A fetched or computed variable declaration."
+	},
+	"Node": {
+		"prefix": ["[N"],
+		"body": ["[N:${1:dialogue_name}:${2:dialogue_intent}] $3"],
+		"description": "A dialogue node declaration."
+	}
+}

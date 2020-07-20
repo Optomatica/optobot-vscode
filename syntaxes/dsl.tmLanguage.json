@@ -1,0 +1,77 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "dsl DSL",
+	"patterns": [
+    {
+      "comment": "Line Comments -- # only works at beginning of line",
+      "match": "(^#.*$)",
+      "captures": {
+          "1" :{
+              "name": "comment.line.dsl"
+          }
+      }
+    },
+		{
+			"include": "#keywords"
+		},
+    { "include": "#expression" }
+	],
+	"repository": {
+    "expression": {
+      "patterns": [
+        { "include": "#variable" }, 
+        { "include": "#option" },
+        { "include": "#node" }
+      ]
+    },
+    "option": {
+      "match": "\\[(O)\\]",
+      "captures": {
+        "1": {
+          "name": "keyword.control"
+        }
+      }
+    },
+    "node": {
+      "match": "\\[(N):(\\w+):?(\\w+)?(\\])",
+      "captures": {
+        "1": {
+          "name": "keyword.control"
+        },
+        "2": {
+          "name": "variable.name"
+        },
+        "3": {
+          "name": "storage.type"
+        }
+      }
+    },
+    "variable": {
+      "match": "\\[(V|F):(\\w+):?(\\w+)?:?(\\w+)?:?(save_text)?(\\])",
+      "captures": {
+        "1": {
+          "name": "keyword.control"
+        },
+        "2": {
+          "name": "variable.name"
+        },
+        "3": {
+          "name": "storage.type"
+        },
+        "4": {
+          "name": "entity.name.type"
+        },
+        "5": {
+          "name": "support.constant"
+        }
+      }
+    },
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.dsl",
+				"match": "\\b(alt|response|hint|supplementary|title|header|body|action)\\b"
+			}]
+		}
+	},
+	"scopeName": "source.dsl"
+}

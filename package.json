@@ -1,0 +1,67 @@
+{
+    "name": "optobot",
+    "displayName": "Optobot",
+    "description": "Syntax highlight for optobot DSL and NLP",
+    "version": "1.0.0",
+    "engines": {
+        "vscode": "^1.42.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "dsl",
+                "aliases": [
+                    "Optobot DSL"
+                ],
+                "extensions": [
+                    ".optodsl"
+                ],
+                "configuration": "./dsl-configuration.json"
+            },
+            {
+                "id": "nlp",
+                "aliases": [
+                    "Optobot NLP"
+                ],
+                "extensions": [
+                    ".optonlp"
+                ],
+                "configuration": "./nlp-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "dsl",
+                "scopeName": "source.dsl",
+                "path": "./syntaxes/dsl.tmLanguage.json"
+            },
+            {
+                "language": "nlp",
+                "scopeName": "source.nlp",
+                "path": "./syntaxes/nlp.tmLanguage.json"
+            }
+        ],
+        "snippets": [
+            {
+              "language": "dsl",
+              "path": "./dsl-snippet.json"
+            },
+            {
+                "language": "nlp",
+                "path": "./nlp-snippet.json"
+              }
+          ]
+    },
+    "devDependencies": {
+        "@types/node": "10.3.6",
+        "@types/vscode": "^1.26.0",
+        "tslint": "5.10.0",
+        "typescript": "2.9.2",
+        "vscode": "^1.1.21"
+    },
+    "activationEvents": ["*"],
+    "main": "./src/extension"
+}

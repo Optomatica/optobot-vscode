@@ -1,0 +1,47 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "nlp NLP",
+	"patterns": [
+    {
+      "comment": "Line Comments -- # only works at beginning of line",
+      "match": "(^#.*$)",
+      "captures": {
+          "1" :{
+              "name": "comment.line.nlp"
+          }
+      }
+    },
+    { "include": "#expression" }
+	],
+	"repository": {
+    "expression": {
+      "patterns": [
+        { "include": "#intent" },
+        {"include": "#entity"}
+      ]
+    },
+    "intent": {
+      "match": "\\[(I):(\\w+)?(\\])",
+      "captures": {
+        "1": {
+          "name": "keyword.control"
+        },
+        "2": {
+          "name": "variable.name"
+        }
+      }
+    },
+    "entity": {
+      "match": "\\[(E):wit\\$(\\w+)?(\\])",
+      "captures": {
+        "1": {
+          "name": "keyword.control"
+        },
+        "2": {
+          "name": "storage.type"
+        }
+      }
+    }
+	},
+	"scopeName": "source.nlp"
+}
