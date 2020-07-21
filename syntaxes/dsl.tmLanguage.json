@@ -21,6 +21,7 @@
       "patterns": [
         { "include": "#variable" }, 
         { "include": "#option" },
+        { "include": "#condition" },
         { "include": "#node" }
       ]
     },
@@ -29,6 +30,17 @@
       "captures": {
         "1": {
           "name": "keyword.control"
+        }
+      }
+    },
+    "condition": {
+      "match": "\\[(C):(\\w+)(\\])",
+      "captures": {
+        "1": {
+          "name": "keyword.control"
+        },
+        "2": {
+          "name": "variable.name"
         }
       }
     },

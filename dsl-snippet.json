@@ -9,6 +9,11 @@
 		"body": ["[F:${1:variable_name}:${2:variable_type}:${3:variable_storage_type}] $4"],
 		"description": "A fetched or computed variable declaration."
 	},
+	"Condition": {
+		"prefix": ["[C"],
+		"body": ["[C:${1:target_dialogue}] $2"],
+		"description": "A condition declaration."
+	},
 	"Node": {
 		"prefix": ["[N"],
 		"body": ["[N:${1:dialogue_name}:${2:dialogue_intent}] $3"],
