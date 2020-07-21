@@ -3,8 +3,13 @@
     "displayName": "Optobot",
     "description": "Syntax highlight for optobot DSL and NLP",
     "version": "1.0.0",
+    "publisher": "optomatica",
     "engines": {
         "vscode": "^1.42.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Optomatica/optobot-vscode.git"
     },
     "categories": [
         "Programming Languages"
